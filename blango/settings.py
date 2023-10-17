@@ -57,6 +57,10 @@ class Dev(Configuration):
         },
     }
 
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
+    REGISTRATION_OPEN = True
+    
     AUTH_USER_MODEL = "blango_auth.User"
 
     # Build paths inside the project like this: BASE_DIR / 'subdir'.
