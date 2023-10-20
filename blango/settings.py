@@ -57,6 +57,14 @@ class Dev(Configuration):
         },
     }
 
+    REST_FRAMEWORK = {
+        "DEFAULT_AUTHENTICATION_CLASSES": [
+            "rest_framework.authentication.BasicAuthentication",
+            "rest_framework.authentication.SessionAuthentication",
+            "rest_framework.authentication.TokenAuthentication",
+        ]
+    }
+
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
     ACCOUNT_ACTIVATION_DAYS = 7
     REGISTRATION_OPEN = True
@@ -114,6 +122,7 @@ class Dev(Configuration):
         "allauth.socialaccount",
         "allauth.socialaccount.providers.google",
         'rest_framework',
+        'rest_framework.authtoken',
 
     ]
 
