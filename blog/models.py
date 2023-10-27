@@ -14,6 +14,9 @@ class Tag(models.Model):
     def __str__(self):
         return self.value
 
+    class Meta:
+        ordering = ["value"]
+
 
 class Comment(models.Model):
     creator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -39,6 +42,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ["slug"]
 
 
 class AuthorProfile(models.Model):
